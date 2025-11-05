@@ -12,14 +12,28 @@
       display:flex;
       justify-content:center;
     }
+    /*Esto para pantallas grandes*/
     .container{
-      width:min(900px, 96%);
+      width: 90%;
+      max-width: 900px;
       background:var(--card);
       border-radius:12px;
       box-shadow:0 8px 30px rgba(10,10,30,0.08);
       overflow:hidden;
       padding: 1rem; /*esto resolvió el margen en las pestañas*/
+      margin: 0 auto;
     }
+@media (max-width: 768px) {
+	body {
+    padding: 0; /* quita el margen lateral del body */
+  }
+  /*Esto para pantallas pequeñas*/ 
+	.container {
+		width: 100%;
+		border-radius: 12px; /* sin esquinas redondeadas para pegarse al fondo */
+		box-shadow: none;
+  }
+}
 
     /* Pestañas sólo con CSS */
     .tabs-css {
@@ -164,7 +178,14 @@
     /*efecto en imágenes*/
     .imagen-animada { transition: transform 0.3s ease; }
     .imagen-animada:hover { transform: scale(1.05); }
-    
+
+/*esto para que los enlaces no se vean de largo*/ 
+    a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* por si acaso se hereda algo raro */
+}
+
 /*hr.style17 {
 	border: 0;
   border-top: 2px solid #8c8b8b;
