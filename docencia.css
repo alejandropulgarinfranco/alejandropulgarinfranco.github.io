@@ -1,0 +1,105 @@
+ :root{
+    --accent: #0f4d92;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 1.5rem;
+    background: #f7f7fb;
+    color: #333;
+  }
+  h2 { color: var(--accent); margin-top:0; }
+  p { line-height:1.6; }
+
+  /* Layout general */
+  .wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+    align-items: stretch; /* <-- hace que ambas columnas se alineen en altura */
+  }
+
+  /* Ocultamos inputs */
+  .wrapper input[type="radio"] { display: none; }
+
+  /* Columna izquierda (pestañas) */
+  .sidebar {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Estilo de las pestañas */
+  .sidebar label {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #555;
+    background: linear-gradient(90deg, rgba(15,98,254,0.03), transparent);
+    border: 1px solid #e6e6eb;
+    transition: all .18s;
+  }
+
+  .sidebar label:hover { background: #f0f5ff; }
+  #tab1:checked ~ .sidebar label[for="tab1"],
+  #tab2:checked ~ .sidebar label[for="tab2"],
+  #tab3:checked ~ .sidebar label[for="tab3"],
+  #tab4:checked ~ .sidebar label[for="tab4"],
+  #tab5:checked ~ .sidebar label[for="tab5"],
+  #tab6:checked ~ .sidebar label[for="tab6"],
+  #tab7:checked ~ .sidebar label[for="tab7"] {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 6px 18px rgba(15,77,146,0.18);
+  }
+
+  /* Contenido a la derecha */
+  .content {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    height: 100%;
+  }
+
+  .tab-content { display: none; }
+
+  #tab1:checked ~ .content #gobierno,
+  #tab2:checked ~ .content #territorial,
+  #tab3:checked ~ .content #estado,
+  #tab4:checked ~ .content #planeacion,
+  #tab5:checked ~ .content #convivencia,
+  #tab6:checked ~ .content #historia,
+  #tab7:checked ~ .content #otras{
+    display:block;
+    animation: fade .22s ease;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width:700px){
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      flex-direction: column;
+      /*gap: .5rem;*/
+      width: 100%;
+    }
+    .sidebar label {
+      /*flex: 1;*/
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
