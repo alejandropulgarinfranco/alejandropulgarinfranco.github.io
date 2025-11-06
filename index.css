@@ -1,49 +1,39 @@
 :root{
       --bg:#f7f7fb;/*fondo general*/
-      --card:#fff; /*fondo contenedor*/
+      --card:#f7f7fb; /*fondo contenedor*/
       --accent:#0f4d92; /*color principal*/
       --muted:#666; /*color atenuado*/
     }
-    body{
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      margin:0;
-      padding:2rem;
-      display:flex;
-      justify-content:center;
-    }
-    /*Esto para pantallas grandes*/
-    .container{
-      width: 90%;
-      max-width: 900px;
-      background:var(--card);
-      border-radius:12px;
-      box-shadow:0 8px 30px rgba(10,10,30,0.08);
-      overflow:hidden;
-      padding: 1rem; /*esto resolvió el margen en las pestañas*/
-      margin: 0 auto;
-    }
-@media (max-width: 768px) {
-	body {
-    padding: 0; /* quita el margen lateral del body */
-  }
-  /*Esto para pantallas pequeñas*/ 
-	.container {
-		width: 100%;
-		border-radius: 12px; /* sin esquinas redondeadas para pegarse al fondo */
-		box-shadow: none;
-  }
+    .site-header {
+  background: var(--card);
+  padding: 0.2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px 12px 12px 12px;
+  margin-bottom: 0.2rem;
+
 }
 
-    /* Pestañas sólo con CSS */
-    .tabs-css {
-      text-align: center; /* centra las pestañas */
-      margin: 1.5rem 0;  /* margen arriba y abajo */
+/* Mantener tus pestañas igual */
+.tabs-css {
+  margin: 0.2rem 0 0 0; /* 1.5rem 0; margen superior dentro del header */
+  text-align: center;
+}
+
+    .tabs-css input[type="radio"] { 
+  display: none; 
     }
-    .tabs-css input { display:none; }
+    input[type="radio"][name="tabs"] { /*esto resolvió lo de los puntos*/
+      display: none;
+    }
+    
     .tabs-css label {
       display:inline-block;
-      padding:0.5rem 0.9rem;
+      padding:0.5rem 1rem;
       cursor:pointer;
       font-weight:600;
       color:var(--muted);
@@ -62,22 +52,67 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(15,98,254,0.1);
     }
-
-    .panels .panel {
-      display:none;
-      padding:1.25rem 1.5rem 2rem;
-      line-height:1.5;
-      text-align: left;
+    
+    /* Cuando un tab está seleccionado, se pinta azul */
+    #tab1:checked ~ header .tabs-css label[for="tab1"],
+    #tab2:checked ~ header .tabs-css label[for="tab2"],
+    #tab3:checked ~ header .tabs-css label[for="tab3"],
+    #tab4:checked ~ header .tabs-css label[for="tab4"],
+    #tab5:checked ~ header .tabs-css label[for="tab5"] {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 12px rgba(15,98,254,0.18);
+}
+  .panels .panel {
+      display: none;
+      padding: 1rem;/*1.25rem 1.5rem 2rem;*/
+      /*line-height:1.5;
+      text-align: left;*/
     }
 
     /* Mostrar panel según input seleccionado */
     #tab1:checked ~ .panels .panel1,
     #tab2:checked ~ .panels .panel2,
     #tab3:checked ~ .panels .panel3,
-    #tab4:checked ~ .panels .panel4 {
+    #tab4:checked ~ .panels .panel4,
+    #tab5:checked ~ .panels .panel5
+    {
       display:block;
     }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      margin:0;
+      padding:2rem;
+      /*display:flex;
+      justify-content:center;*/
+    }
+    /*Esto para pantallas grandes*/
+    .container{
+      width: 90%;
+      max-width: 900px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(10,10,30,0.08);
+      overflow:hidden;
+      padding: 1rem; /*esto resolvió el margen en las pestañas*/
+      margin: 2rem auto;
+      margin-top: 0.1rem;
+    }
     
+    @media (max-width: 768px) {
+    body {
+    padding: 0; /* quita el margen lateral del body */
+  }
+  /*Esto para pantallas pequeñas*/ 
+  .container {
+    width: 100%;
+    border-radius: 12px; /* sin esquinas redondeadas para pegarse al fondo */
+    box-shadow: none;
+  }
+}
+
     .sobre-mi {
     display: flex;
     align-items: center;
@@ -89,7 +124,7 @@
     border-radius: 10px;
   }
   
-   /*Responsive para pestañas pequeñas */
+   /*Responsive para pantallas pequeñas */
   @media (max-width: 768px) {
     .sobre-mi {
       flex-direction: column; /* cambia de fila a columna */
@@ -136,7 +171,7 @@
 
     footer { text-align: center; margin-top: 1rem; }
     .footer-text { margin: 0.5rem 0; color: var(--muted); font-size: 0.95rem; }
-    .h1-titulo { text-align: center; font-family: Garamond; font-weight: 600; font-size: 2.5rem; color: #0f4d92; margin-bottom:0.2rem; line-height:1.1; opacity:0; transform:translateY(10px); animation:aparecer 1.2s ease-out forwards;}
+    .h1-titulo { text-align: center; font-family: Georgia; font-weight: 500; font-size: 2.5rem; color: #0f4d92; margin-bottom:0.2rem; line-height:1.1; opacity:0; transform:translateY(10px); animation:aparecer 1.2s ease-out forwards;}
 
     /*configuración Viñetas*/
     .p-vineta { list-style: none; position: relative; padding-left: 1.2rem; }
@@ -178,34 +213,14 @@
     /*efecto en imágenes*/
     .imagen-animada { transition: transform 0.3s ease; }
     .imagen-animada:hover { transform: scale(1.05); }
-
-/*esto para que los enlaces no se vean de largo*/ 
+    
+    /*esto para que los enlaces no se vean de largo*/ 
     a {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal; /* por si acaso se hereda algo raro */
 }
 
-/*hr.style17 {
-	border: 0;
-  border-top: 2px solid #8c8b8b;
-	text-align: center;
-   position: relative;
-  height: 1em;
-  overflow: visible;
-  margin: 2em 0;
-}
-hr.style17:after {
-	content: '§';
-	display: inline-block;
-	position: relative;
-	top: -14px;
-	padding: 0 10px;
-	background: #fff;
-	color: #8c8b8b;
-	font-size: 20px;
-	transform: rotate(60deg);
-}*/
 hr.style1 {
 	border: 0;
   /*border-top: 2px solid #8c8b8b;*/
@@ -224,7 +239,7 @@ hr.style1:after {
 	content: '⚜';
 	display: inline-block;
 	position: relative;
-	top: -23px;
+	top: -19px;
 	padding: 0 10px;
 	background: transparent;
 	color: #0f4d92;
