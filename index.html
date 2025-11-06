@@ -7,26 +7,26 @@
 <link rel="stylesheet" href="index.css"> <!--esto para vincularlo en el github-->
 </head>
 <body>
-  <main class="container">
-    <!-- organizaión en pestañas-->
+  <input type="radio" id="tab1" name="tabs" checked>
+  <input type="radio" id="tab2" name="tabs">
+  <input type="radio" id="tab3" name="tabs">
+  <input type="radio" id="tab4" name="tabs">
+  <input type="radio" id="tab5" name="tabs">
+
+  <!-- Header con las pestañas -->
+  <header class="site-header">
     <div class="tabs-css">
-      <!-- Inputs + labels para tabs -->
-      <input type="radio" name="tabs" id="tab1" checked>
       <label for="tab1">Inicio</label>
-
-      <input type="radio" name="tabs" id="tab2">
       <label for="tab2">Curriculum vitae</label>
-
-      <input type="radio" name="tabs" id="tab3">
       <label for="tab3">Investigación</label>
-
-      <input type="radio" name="tabs" id="tab4">
       <label for="tab4">Docencia</label>
-
+      <label for="tab5">Datos y visualizaciones</label>
+    </div>
+  </header>
       <div class="panels">
         <!-- Panel 1: Inicio -->
         <div class="panel panel1">
-          <p style="text-align:center; font-family:Garamond; font-weight:600; font-size:2.5rem; color:#0f4d92; margin-bottom:0.2rem; line-height:1.1; opacity:0; transform:translateY(10px); animation:aparecer 1.2s ease-out forwards;">
+          <p style="text-align:center; font-family:Garamond; font-weight:500; font-size:2.5rem; color:#0f4d92; margin-bottom:0rem; line-height:1.1; opacity:0; transform:translateY(10px); animation:aparecer 1.2s ease-out forwards;">
             Alejandro Pulgarín-Franco<br>
             <span style="display:block; font-family:Palatino; font-weight:400; font-size:1.1rem; color:#000; margin-top:0.1rem;">Docente, investigador y consultor</span>
           </p>
@@ -144,6 +144,30 @@
           -->
             <!-- Aquí se carga docencia.html completo -->
             <iframe src="www/docencia.html" style="width:100%; height:800px; border:none; border-radius:12px;"></iframe>
+            </div>
+            
+            <!--Panel 5: Datos y visualizaciones -->
+            <div class="panel panel5">
+              <h1 class= "h1-titulo">Datos y visualizaciones</h1>
+              <hr class= "style1">
+              <p>En este espacio pueden observar algunos tableros de visualización de datos, también tengo un sitio web en el que pueden consultar más tableros de este tipo llamado<a href= "https://sites.google.com/view/portalpublico/página-principal"> Portal Público</a> </p>
+              <div><iframe width="100%" height="525" src="https://datastudio.google.com/embed/reporting/5a813814-2a8b-4885-adc4-ff0cf88f8007/page/Hu16C" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+              <br>
+              <hr class=decorativo>
+              <br>
+              <div><iframe width="100%" height="525" src="https://datastudio.google.com/embed/reporting/425e2f6b-a9a8-4123-a27c-eede8b6191b9/page/9b28C" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+              <br>
+              <hr class=decorativo>
+              <br>
+              <div><iframe width="100%" height="525" src="https://lookerstudio.google.com/embed/reporting/028e9df4-d24c-42a7-8089-7e719d781c2b/page/Ysj1D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+              </div>
+              <br>
+              <hr class=decorativo>
+              <br>
+              <div><iframe width="100%" height="525" src="https://lookerstudio.google.com/embed/reporting/36a554e1-41d2-4a3e-bb04-b3369108c3c5/page/p_chqmpd8r6c" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
       </div>
