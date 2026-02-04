@@ -18,7 +18,7 @@
 
 }
 
-/* Mantener tus pestañas igual */
+/* Mantener pestañas igual */
 .tabs-css {
   margin: 0.2rem 0 0 0; /* 1.5rem 0; margen superior dentro del header */
   text-align: center;
@@ -202,9 +202,9 @@
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.15s ease;
+      transition: transform 0.2s ease;
     }
-    .info-card:hover { transform: translateY(-4px); }
+    .info-card:hover { transform: scale(1.05); }
     .info-card svg { display: block; width: 40px; height: 40px; stroke: #0f4d92;  margin-bottom: 0rem; }
     .info-card h3 { margin-top:0; margin-bottom:0.5rem; font-size:1.3rem; color:#333; }
     .info-card ul { list-style:none; padding:0; margin:0; }
