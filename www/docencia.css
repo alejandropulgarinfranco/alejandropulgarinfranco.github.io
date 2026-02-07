@@ -58,7 +58,8 @@
   #tab4:checked ~ .sidebar label[for="tab4"],
   #tab5:checked ~ .sidebar label[for="tab5"],
   #tab6:checked ~ .sidebar label[for="tab6"],
-  #tab7:checked ~ .sidebar label[for="tab7"] {
+  #tab7:checked ~ .sidebar label[for="tab7"]
+  #tab8:checked ~ .sidebar label[for="tab8"]{
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
@@ -78,11 +79,12 @@
 
   #tab1:checked ~ .content #gobierno,
   #tab2:checked ~ .content #territorial,
-  #tab3:checked ~ .content #estado,
-  #tab4:checked ~ .content #planeacion,
-  #tab5:checked ~ .content #convivencia,
-  #tab6:checked ~ .content #historia,
-  #tab7:checked ~ .content #otras{
+  #tab3:checked ~ .content #ambiental,
+  #tab4:checked ~ .content #estado,
+  #tab5:checked ~ .content #planeacion,
+  #tab6:checked ~ .content #convivencia,
+  #tab7:checked ~ .content #historia,
+  #tab8:checked ~ .content #otras{
     display:block;
     animation: fade .22s ease;
   }
