@@ -238,9 +238,10 @@
   }
 }
 
-/* iPad / celular */
+/* iPad / celular: se voltea al tocar y queda enfocada */
 @media (hover: none) and (pointer: coarse) {
-  .flip-card:active .flip-card-inner {
+  .flip-card:focus .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner {
     transform: rotateY(180deg);
   }
 }
@@ -254,6 +255,7 @@
   height: 100%;
   backface-visibility: hidden;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Frente */
