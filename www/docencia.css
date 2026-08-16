@@ -58,8 +58,8 @@
   #tab4:checked ~ .sidebar label[for="tab4"],
   #tab5:checked ~ .sidebar label[for="tab5"],
   #tab6:checked ~ .sidebar label[for="tab6"],
-  #tab7:checked ~ .sidebar label[for="tab7"]
-  #tab8:checked ~ .sidebar label[for="tab8"]{
+  #tab7:checked ~ .sidebar label[for="tab7"],
+  #tab8:checked ~ .sidebar label[for="tab8"],{
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
