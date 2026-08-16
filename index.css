@@ -251,15 +251,50 @@
     .imagen-animada:hover { transform: scale(1.05); } */
 
 .imagen-animada {
+  width: 200px;      /* ajusta al tamaño que uses */
+  height: 200px;      /* ajusta al tamaño que uses */
+  perspective: 1000px;
+}
+
+.imagen-animada-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   transition: transform 0.3s ease;
+  transform-style: preserve-3d;
 }
 
-.imagen-animada:hover {
-  transform: scale(1.05);
+/* Efecto combinado: gira + zoom, en hover (desktop) y active (móvil) */
+.imagen-animada:hover .imagen-animada-inner,
+.imagen-animada:active .imagen-animada-inner {
+  transform: rotateY(180deg) scale(1.05);
 }
 
-.imagen-animada:active {
-  transform: scale(1.05);
+.imagen-animada-front,
+.imagen-animada-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imagen-animada-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagen-animada-back {
+  background-color: #0f4d92;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
 }
     
     /*esto para que los enlaces no se vean de largo*/ 
