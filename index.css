@@ -197,7 +197,8 @@
       gap: 2rem;
       margin-top: 2rem;
     }
- .info-card {
+/* efecto en tarjetas */
+.info-card {
       background: #f2f2f2;
       border-radius: 12px;
       padding: 1.5rem;
@@ -205,96 +206,27 @@
       transition: transform 0.2s ease;
     }
 
- /*   .info-card:hover { transform: scale(1.05); }
+.info-card:active { transform: scale(1.05); }
+    .info-card:hover { transform: scale(1.05); }
     .info-card svg { display: block; width: 40px; height: 40px; stroke: #0f4d92;  margin-bottom: 0rem; }
     .info-card h3 { margin-top:0; margin-bottom:0.5rem; font-size:1.3rem; color:#333; }
     .info-card ul { list-style:none; padding:0; margin:0; }
     .info-card li { margin-bottom:0.4rem; color:#555; }
-*/ 
-    /* efecto en tarjetas */
-
-.info-card:hover {
-  transform: scale(1.05);
-}
-
-.info-card:active {
-  transform: scale(1.05);
-}
-
-.info-card svg {
-  display: block;
-  width: 40px;
-  height: 40px;
-  stroke: #0f4d92;
-  margin-bottom: 0rem;
-}
-
-.info-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  color: #333;
-}
-
-.info-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.info-card li {
-  margin-bottom: 0.4rem;
-  color: #555;
-}
+    
     /*efecto en imágenes
     .imagen-animada { transition: transform 0.3s ease; }
     .imagen-animada:hover { transform: scale(1.05); } */
 
 .imagen-animada {
-  width: 200px;      /* ajusta al tamaño que uses */
-  height: 200px;      /* ajusta al tamaño que uses */
-  perspective: 1000px;
-}
-
-.imagen-animada-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
   transition: transform 0.3s ease;
-  transform-style: preserve-3d;
 }
 
-/* Efecto combinado: gira + zoom, en hover (desktop) y active (móvil) */
-.imagen-animada:hover .imagen-animada-inner,
-.imagen-animada:active .imagen-animada-inner {
-  transform: rotateY(180deg) scale(1.05);
+.imagen-animada:hover {
+  transform: rotate(2deg);
 }
 
-.imagen-animada-front,
-.imagen-animada-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.imagen-animada-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.imagen-animada-back {
-  background-color: #0f4d92;
-  color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  text-align: center;
+.imagen-animada:active {
+  transform: rotate(2deg);
 }
     
     /*esto para que los enlaces no se vean de largo*/ 
