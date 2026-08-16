@@ -217,16 +217,66 @@
     .imagen-animada { transition: transform 0.3s ease; }
     .imagen-animada:hover { transform: scale(1.05); } */
 
-.imagen-animada {
-  transition: transform 0.3s ease;
+.flip-card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
 }
 
-.imagen-animada:hover {
-  transform: rotate(2deg);
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
 }
 
-.imagen-animada:active {
-  transform: rotate(2deg);
+/* Computador: pasar el mouse */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Celular / iPad: tocar */
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Ambas caras */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Frente */
+.flip-card-front {
+  background: #fff;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Reverso */
+.flip-card-back {
+  background: #0f4d92;
+  color: white;
+  transform: rotateY(180deg);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.5rem;
+  text-align: center;
 }
     
     /*esto para que los enlaces no se vean de largo*/ 
