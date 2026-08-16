@@ -231,14 +231,18 @@
   transform-style: preserve-3d;
 }
 
-/* Computador: pasar el mouse */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+/* PC */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
-/* Celular / iPad: tocar */
-.flip-card:active .flip-card-inner {
-  transform: rotateY(180deg);
+/* iPad / celular */
+@media (hover: none) and (pointer: coarse) {
+  .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 /* Ambas caras */
@@ -261,7 +265,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* Reverso */
